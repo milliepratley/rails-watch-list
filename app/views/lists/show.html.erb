@@ -1,33 +1,29 @@
 <div class="container">
-  <h1><%= @list.name.capitalize %></h1>
-
-<div class="row">
-  <% @list.bookmarks.each do |bookmark| %>
-    <div class="col-4">
-      <div class="bookmark-card">
-        <%= image_tag bookmark.movie.poster_url, class: "bookmark-img" %>
-        <div>
-          <h4 class="px-2"><%= bookmark.movie.title %></h4>
-          <p class="px-2">Your thoughts about this movie...</p>
-          <p class="px-2">"<%= bookmark.comment %>"</p>
-        </div>
-        <div class="d-flex align-items-end">
-          <%= link_to "<i class='fa-solid fa-trash delete-btn'></i>".html_safe, bookmark_path(bookmark),  class: "px-2", data: {
-                      turbo_method: :delete,
-                      turbo_confirm: "Are you sure?"
-                    } %>
+  <h1><%= @list.name %></h1>
+  <div class="row">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="col-4">
+        <div class="bookmark-card">
+          <%= image_tag bookmark.movie.poster_url, class: "bookmark-img" %>
+          <div>
+            <h4 class="px-2"><%= bookmark.movie.title %></h4>
+            <p class="px-2">Your thoughts about this movie...</p>
+            <p class="px-2">"<%= bookmark.comment %>"</p>
+          </div>
+          <div class="d-flex align-items-end">
+            <%= link_to "<i class='fa-solid fa-trash delete-btn'></i>".html_safe, bookmark_path(bookmark),  class: "px-2", data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "Are you sure?"
+                      } %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
-  <div class="col-4">
-    <div class="bookmark-card d-flex justify-content-center align-items-center">
-      <%= link_to "<i class='fa-solid fa-plus'></i> <strong>BOOKMARK</strong>".html_safe, new_list_bookmark_path(@list.id), class: "add-bkmk-link" %>
+    <% end %>
+    <div class="col-4">
+      <div class="bookmark-card d-flex justify-content-center align-items-center">
+        <%= link_to "<i class='fa-solid fa-plus'></i> <strong>BOOKMARK</strong>".html_safe, new_list_bookmark_path(@list.id), class: "add-bkmk-link" %>
+      </div>
     </div>
   </div>
-</div>
-
-
-
   <%= link_to "<< Back to Lists", lists_path, class: "back-btn" %>
 </div>
