@@ -1,1 +1,17 @@
 // Specific CSS for your home-page
+.hero-image {
+  background-image: linear-gradient(rgba(245, 245, 245, 0.4), rgba(245, 245, 245, 0.4)), url("movies.avif");
+  height: 20rem;
+  background-size: cover;
+}
+
+.hero-text {
+  text-align: center;
+  padding: 100px;
+  color: rgb(58, 58, 58);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: 'PT Serif', serif;
+}

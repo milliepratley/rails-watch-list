@@ -1,8 +1,17 @@
-<h1>View All Lists</h1>
+<div class="hero-image d-flex align-items-center justify-content-center mb-2">
+  <div class="hero-text">
+    <h2>Your <strong>virtual</strong> movie organiser.</h2>
+  </div>
+</div>
 
-<% @lists.each do |list| %>
-  <p><%= list.name %></p>
-  <%= link_to "View this list", list_path(list.id) %>
-<% end %>
-
-<%= link_to "Add a new list", new_list_path %>
+<div class="container">
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="col-4">
+        <div class="card-category my-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=list.bookmarks&.first&.movie&.poster_url %>)">
+          <%= link_to list.name, list_path(list.id), class: "card-text" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

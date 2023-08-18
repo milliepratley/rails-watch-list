@@ -1,0 +1,32 @@
+.main-btn {
+  background-color: #e12067;
+  color: white;
+  border-radius: 5px;
+}
+
+.outline-btn {
+  background-color: white;
+  color: #e12067;
+  border-color: #e12067;
+  border-radius: 5px;
+  &:hover{
+    background-color: #e12067;
+    color: white;
+    border-color: #e12067;
+  }
+}
+
+.delete-btn {
+  color: #e12067;
+}
+
+.add-bkmk-link {
+  color: #e12067;
+  text-decoration: none;
+}
+
+.back-btn {
+  color: #e12067;
+  text-decoration: none;
+  font-weight: 400;
+}
